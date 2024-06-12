@@ -31,6 +31,9 @@ flutter:
 
   assets:
   - "lib/Image/SoccerImg.svg"
+  - "lib/Image/SoccerImgSub.svg"
   - "lib/Image/facebookIcon.svg"
   - "lib/Image/googleIcon.svg"
+  - "lib/Image/chat_box.svg"
+  - "lib/Image/iconMessage.svg"
   

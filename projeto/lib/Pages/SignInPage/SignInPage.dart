@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:projeto/Pages/LoginPage/LoginPage.dart';
+import 'package:projeto/utils/BottomNavBar.dart';
 import 'package:projeto/utils/ColorsPaleta.dart';
 
 class SignInPage extends StatefulWidget {
@@ -11,13 +13,14 @@ class SignInPage extends StatefulWidget {
 
 class _SignInPageState extends State<SignInPage> {
   bool hiddenPassword = false;
-  bool hiddenPasswordAgain = false;
 
-  Icon eyeOpenPassword = const Icon(
-    Icons.visibility_off_outlined,
+  Icon eyeOpenPassword = Icon(
+    Icons.visibility,
+    color: ColorsPaleta().red,
   );
-  Icon eyeClosePassword = const Icon(
+  Icon eyeClosePassword = Icon(
     Icons.visibility_off,
+    color: ColorsPaleta().red,
   );
 
   bool checkBox = false;
@@ -25,30 +28,22 @@ class _SignInPageState extends State<SignInPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+    
+      resizeToAvoidBottomInset: false,
       appBar: AppBar(
-        iconTheme:
-            IconThemeData(color: ColorsPaleta().textMainColor, size: 40.0),
+        leading: GestureDetector(
+            onTap: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const LoginPage()));
+            },
+            child: Icon(Icons.arrow_back,
+                color: ColorsPaleta().yellow, size: 40.0)),
       ),
       body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SvgPicture.asset("lib/Image/SoccerImg.svg", width: 75.0),
-              const SizedBox(
-                width: 10.0,
-              ),
-              Text(
-                "Timaço",
-                style: TextStyle(
-                    fontSize: 35,
-                    fontWeight: FontWeight.w700,
-                    color: ColorsPaleta().mainColor,
-                    fontFamily: "Poppins"),
-              )
-            ],
-          ),
+          SvgPicture.asset("lib/Image/SoccerImgSub.svg", width: 180.0),
           Column(
             children: [
               Padding(
@@ -56,16 +51,27 @@ class _SignInPageState extends State<SignInPage> {
                     const EdgeInsets.only(left: 20.0, right: 20.0, top: 0.0),
                 child: Column(
                   children: [
-                    const TextField(
+                    TextField(
                         decoration: InputDecoration(
-                            labelText: "Nome",
-                            labelStyle: TextStyle(fontSize: 20.0))),
-                    const TextField(
+                            enabledBorder: UnderlineInputBorder(
+                                borderSide:
+                                    BorderSide(color: ColorsPaleta().orange)),
+                            labelText: "Nome *",
+                            labelStyle: TextStyle(
+                                fontSize: 20.0, color: ColorsPaleta().red))),
+                    TextField(
                         decoration: InputDecoration(
-                            labelText: "E-mail",
-                            labelStyle: TextStyle(fontSize: 20.0))),
+                            enabledBorder: UnderlineInputBorder(
+                                borderSide:
+                                    BorderSide(color: ColorsPaleta().orange)),
+                            labelText: "E-mail *",
+                            labelStyle: TextStyle(
+                                fontSize: 20.0, color: ColorsPaleta().red))),
                     TextFormField(
                       decoration: InputDecoration(
+                          enabledBorder: UnderlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: ColorsPaleta().orange)),
                           suffixIcon: IconButton(
                               onPressed: () => setState(() {
                                     hiddenPassword = !hiddenPassword;
@@ -74,23 +80,28 @@ class _SignInPageState extends State<SignInPage> {
                               icon: hiddenPassword
                                   ? eyeClosePassword
                                   : eyeOpenPassword),
-                          labelText: "Senha",
-                          labelStyle: const TextStyle(fontSize: 20.0)),
+                          labelText: "Senha *",
+                          labelStyle: TextStyle(
+                              fontSize: 20.0, color: ColorsPaleta().red)),
                       obscureText: hiddenPassword,
                     ),
                     TextFormField(
                       decoration: InputDecoration(
+                          enabledBorder: UnderlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: ColorsPaleta().orange)),
                           suffixIcon: IconButton(
                               onPressed: () => setState(() {
-                                    hiddenPasswordAgain = !hiddenPasswordAgain;
+                                    hiddenPassword = !hiddenPassword;
                                   }),
                               iconSize: 33.0,
-                              icon: hiddenPasswordAgain
+                              icon: hiddenPassword
                                   ? eyeClosePassword
                                   : eyeOpenPassword),
-                          labelText: "Confirmar senha",
-                          labelStyle: const TextStyle(fontSize: 20.0)),
-                      obscureText: hiddenPasswordAgain,
+                          labelText: "Confirmar senha *",
+                          labelStyle: TextStyle(
+                              fontSize: 20.0, color: ColorsPaleta().red)),
+                      obscureText: hiddenPassword,
                     ),
                   ],
                 ),
@@ -100,18 +111,19 @@ class _SignInPageState extends State<SignInPage> {
               ),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Checkbox(
+                      activeColor: ColorsPaleta().orange,
                       value: checkBox,
                       onChanged: (value) {
                         setState(() {
                           checkBox = !checkBox;
                         });
                       }),
-                  const Text(
+                   Text(
                     "Eu concordo com a política de ${'\n'} privacidade",
-                    style: TextStyle(fontSize: 18.0),
+                    style: TextStyle(fontSize: 18.0,color: ColorsPaleta().red),
                     textAlign: TextAlign.start,
                   )
                 ],
@@ -119,14 +131,19 @@ class _SignInPageState extends State<SignInPage> {
             ],
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const BottomNavBar()));
+            },
             style: ElevatedButton.styleFrom(
                 elevation: 2,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15.0)),
                 padding: const EdgeInsets.symmetric(
                     horizontal: 145.0, vertical: 10.0),
-                backgroundColor: ColorsPaleta().textMainColor),
+                backgroundColor: ColorsPaleta().orange),
             child: Text(
               'Criar',
               style: TextStyle(
@@ -136,20 +153,18 @@ class _SignInPageState extends State<SignInPage> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Container(
-                  height: 4, width: 150, color: ColorsPaleta().lineGreyColor),
+              Container(height: 4, width: 150, color: ColorsPaleta().yellow),
               const SizedBox(
                 width: 5,
               ),
               Text(
                 "OU",
-                style: TextStyle(color: Colors.grey[700], fontSize: 15.0),
+                style: TextStyle(color: ColorsPaleta().red, fontSize: 15.0),
               ),
               const SizedBox(
                 width: 5,
               ),
-              Container(
-                  height: 4, width: 150, color: ColorsPaleta().lineGreyColor)
+              Container(height: 4, width: 150, color: ColorsPaleta().red)
             ],
           ),
           Row(
@@ -159,7 +174,7 @@ class _SignInPageState extends State<SignInPage> {
                   style: ElevatedButton.styleFrom(
                       elevation: 2,
                       shape: RoundedRectangleBorder(
-                          side: const BorderSide(color: Colors.black),
+                          side: BorderSide(color: ColorsPaleta().orange),
                           borderRadius: BorderRadius.circular(15.0)),
                       padding: const EdgeInsets.symmetric(
                           horizontal: 30, vertical: 10)),
@@ -175,7 +190,7 @@ class _SignInPageState extends State<SignInPage> {
                       ),
                       const Text(
                         "Google",
-                        style: TextStyle(fontSize: 19.0, color: Colors.black),
+                        style: TextStyle(fontSize: 14.0, color: Colors.black),
                       )
                     ],
                   )),
@@ -186,10 +201,10 @@ class _SignInPageState extends State<SignInPage> {
                   style: ElevatedButton.styleFrom(
                       elevation: 2,
                       shape: RoundedRectangleBorder(
-                          side: const BorderSide(color: Colors.black),
+                          side: BorderSide(color: ColorsPaleta().orange),
                           borderRadius: BorderRadius.circular(15.0)),
                       padding: const EdgeInsets.symmetric(
-                          horizontal: 27, vertical: 10)),
+                          horizontal: 30, vertical: 10)),
                   onPressed: () {},
                   child: Row(
                     children: [
@@ -202,7 +217,7 @@ class _SignInPageState extends State<SignInPage> {
                       ),
                       const Text(
                         "Facebook",
-                        style: TextStyle(fontSize: 19.0, color: Colors.black),
+                        style: TextStyle(fontSize: 14.0, color: Colors.black),
                       )
                     ],
                   )),

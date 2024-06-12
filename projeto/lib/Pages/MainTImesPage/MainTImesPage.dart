@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:projeto/Pages/MainTImesPage/CreateNewTime.dart';
 import 'package:projeto/utils/BottomNavBar.dart';
 import 'package:projeto/utils/ColorsPaleta.dart';
+import 'package:projeto/utils/OptionsEvents.dart';
 
 class MainTimePage extends StatefulWidget {
   const MainTimePage({super.key});
@@ -15,11 +17,21 @@ class _MainTimePageState extends State<MainTimePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         actions: [
-          Icon(
-            Icons.more_horiz,
-            size: 55.0,
-            color: ColorsPaleta().mainColor,
+          GestureDetector(
+            onTap: () {
+              showDialog(
+                  context: context,
+                  builder: (BuildContext context) {
+                    return const OptionsEvents();
+                  });
+            },
+            child: Icon(
+              Icons.more_horiz,
+              size: 50.0,
+              color: ColorsPaleta().orange,
+            ),
           ),
           const SizedBox(
             width: 9.0,
@@ -55,10 +67,14 @@ class _MainTimePageState extends State<MainTimePage> {
             Padding(
               padding: const EdgeInsets.only(top: 85.0),
               child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      fixedSize: const Size(358, 50),
-                      backgroundColor: ColorsPaleta().mainColor),
-                  onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                        elevation: 6,
+                        shadowColor: Colors.black,
+                        fixedSize: const Size(338, 45),
+                        backgroundColor: ColorsPaleta().orange),
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const CreateNewTime()));
+                  },
                   child: const Text(
                     "Novo time",
                     style: TextStyle(color: Colors.white, fontSize: 19.0),
