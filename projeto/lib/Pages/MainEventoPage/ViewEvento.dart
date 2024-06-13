@@ -211,7 +211,7 @@ class _ViewEventoState extends State<ViewEvento> {
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
-                                "Conviter (12/24)",
+                                "Convites (12/24)",
                                 style: TextStyle(
                                     fontSize: 23.0,
                                     color: Colors.grey.shade600),
@@ -219,321 +219,207 @@ class _ViewEventoState extends State<ViewEvento> {
                             ],
                           ),
                           Expanded(
-                            child: ListView(children: [
-                              Column(
-                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              child: Column(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
                                 children: [
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      SizedBox(
-                                        width: 150,
-                                        height:
-                                            50, // Adjust height to match the Stack height
-                                        child: Stack(
-                                          children: [
-                                            Positioned(
-                                              left: 0,
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  border: Border.all(
-                                                      color: Colors.black,
-                                                      width: 0.8),
-                                                  color: Colors.white,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          100),
-                                                ),
-                                                width: 50,
-                                                height: 50,
-                                              ),
+                                  SizedBox(
+                                    width: 150,
+                                    height:
+                                        50, // Adjust height to match the Stack height
+                                    child: Stack(
+                                      children: [
+                                        Positioned(
+                                          left: 0,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              border: Border.all(
+                                                  color: Colors.black,
+                                                  width: 0.8),
+                                              color: Colors.white,
+                                              borderRadius:
+                                                  BorderRadius.circular(100),
                                             ),
-                                            Positioned(
-                                              left: 30,
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  border: Border.all(
-                                                      color: Colors.black,
-                                                      width: 0.8),
-                                                  color: Colors.white,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          100),
-                                                ),
-                                                width: 50,
-                                                height: 50,
-                                              ),
-                                            ),
-                                            Positioned(
-                                              left: 60,
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  border: Border.all(
-                                                      color: Colors.black,
-                                                      width: 0.8),
-                                                  color: Colors.white,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          100),
-                                                ),
-                                                width: 50,
-                                                height: 50,
-                                              ),
-                                            ),
-                                          ],
+                                            width: 50,
+                                            height: 50,
+                                          ),
                                         ),
-                                      ),
-                                      const Text("12 aceitos"),
-                                    ],
+                                        Positioned(
+                                          left: 30,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              border: Border.all(
+                                                  color: Colors.black,
+                                                  width: 0.8),
+                                              color: Colors.white,
+                                              borderRadius:
+                                                  BorderRadius.circular(100),
+                                            ),
+                                            width: 50,
+                                            height: 50,
+                                          ),
+                                        ),
+                                        Positioned(
+                                          left: 60,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              border: Border.all(
+                                                  color: Colors.black,
+                                                  width: 0.8),
+                                              color: Colors.white,
+                                              borderRadius:
+                                                  BorderRadius.circular(100),
+                                            ),
+                                            width: 50,
+                                            height: 50,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      SizedBox(
-                                        width: 150,
-                                        height:
-                                            50, // Adjust height to match the Stack height
-                                        child: Stack(
-                                          children: [
-                                            Positioned(
-                                              left: 0,
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  border: Border.all(
-                                                      color: Colors.black,
-                                                      width: 0.8),
-                                                  color: Colors.white,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          100),
-                                                ),
-                                                width: 50,
-                                                height: 50,
-                                              ),
-                                            ),
-                                            Positioned(
-                                              left: 30,
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  border: Border.all(
-                                                      color: Colors.black,
-                                                      width: 0.8),
-                                                  color: Colors.white,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          100),
-                                                ),
-                                                width: 50,
-                                                height: 50,
-                                              ),
-                                            ),
-                                            Positioned(
-                                              left: 60,
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  border: Border.all(
-                                                      color: Colors.black,
-                                                      width: 0.8),
-                                                  color: Colors.white,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          100),
-                                                ),
-                                                width: 50,
-                                                height: 50,
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      const Text("10 não decidiram"),
-                                    ],
+                                  const Text(
+                                    "12 aceitos",
+                                    style: TextStyle(
+                                        fontSize: 20, color: Colors.green),
                                   ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceBetween,
-                                    children: [
-                                      SizedBox(
-                                        width: 150,
-                                        height:
-                                            50, // Adjust height to match the Stack height
-                                        child: Stack(
-                                          children: [
-                                            Positioned(
-                                              left: 0,
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  border: Border.all(
-                                                      color: Colors.black,
-                                                      width: 0.8),
-                                                  color: Colors.white,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          100),
-                                                ),
-                                                width: 50,
-                                                height: 50,
-                                              ),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  SizedBox(
+                                    width: 150,
+                                    height:
+                                        50, // Adjust height to match the Stack height
+                                    child: Stack(
+                                      children: [
+                                        Positioned(
+                                          left: 0,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              border: Border.all(
+                                                  color: Colors.black,
+                                                  width: 0.8),
+                                              color: Colors.white,
+                                              borderRadius:
+                                                  BorderRadius.circular(100),
                                             ),
-                                            Positioned(
-                                              left: 30,
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  border: Border.all(
-                                                      color: Colors.black,
-                                                      width: 0.8),
-                                                  color: Colors.white,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          100),
-                                                ),
-                                                width: 50,
-                                                height: 50,
-                                              ),
-                                            ),
-                                            Positioned(
-                                              left: 60,
-                                              child: Container(
-                                                decoration: BoxDecoration(
-                                                  border: Border.all(
-                                                      color: Colors.black,
-                                                      width: 0.8),
-                                                  color: Colors.white,
-                                                  borderRadius:
-                                                      BorderRadius.circular(
-                                                          100),
-                                                ),
-                                                width: 50,
-                                                height: 50,
-                                              ),
-                                            ),
-                                          ],
+                                            width: 50,
+                                            height: 50,
+                                          ),
                                         ),
-                                      ),
-                                      const Text("2 na fila"),
-                                    ],
-                                  )
+                                        Positioned(
+                                          left: 30,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              border: Border.all(
+                                                  color: Colors.black,
+                                                  width: 0.8),
+                                              color: Colors.white,
+                                              borderRadius:
+                                                  BorderRadius.circular(100),
+                                            ),
+                                            width: 50,
+                                            height: 50,
+                                          ),
+                                        ),
+                                        Positioned(
+                                          left: 60,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              border: Border.all(
+                                                  color: Colors.black,
+                                                  width: 0.8),
+                                              color: Colors.white,
+                                              borderRadius:
+                                                  BorderRadius.circular(100),
+                                            ),
+                                            width: 50,
+                                            height: 50,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Text(
+                                    "10 não decidiram",
+                                    style: TextStyle(
+                                        fontSize: 20,
+                                        color: ColorsPaleta().yellow),
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  SizedBox(
+                                    width: 150,
+                                    height:
+                                        50, // Adjust height to match the Stack height
+                                    child: Stack(
+                                      children: [
+                                        Positioned(
+                                          left: 0,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              border: Border.all(
+                                                  color: Colors.black,
+                                                  width: 0.8),
+                                              color: Colors.white,
+                                              borderRadius:
+                                                  BorderRadius.circular(100),
+                                            ),
+                                            width: 50,
+                                            height: 50,
+                                          ),
+                                        ),
+                                        Positioned(
+                                          left: 30,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              border: Border.all(
+                                                  color: Colors.black,
+                                                  width: 0.8),
+                                              color: Colors.white,
+                                              borderRadius:
+                                                  BorderRadius.circular(100),
+                                            ),
+                                            width: 50,
+                                            height: 50,
+                                          ),
+                                        ),
+                                        Positioned(
+                                          left: 60,
+                                          child: Container(
+                                            decoration: BoxDecoration(
+                                              border: Border.all(
+                                                  color: Colors.black,
+                                                  width: 0.8),
+                                              color: Colors.white,
+                                              borderRadius:
+                                                  BorderRadius.circular(100),
+                                            ),
+                                            width: 50,
+                                            height: 50,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  const Text(
+                                    "2 na fila",
+                                    style: TextStyle(
+                                        fontSize: 20, color: Colors.grey),
+                                  ),
                                 ],
                               )
-                            ]),
-
-                            //   ListTile(
-                            //     leading: SizedBox(
-                            //       width: 150,
-                            //       height:
-                            //           50, // Adjust height to match the Stack height
-                            //       child: Stack(
-                            //         children: [
-                            //           Positioned(
-                            //             left: 0,
-                            //             child: Container(
-                            //               decoration: BoxDecoration(
-                            //                 border: Border.all(
-                            //                     color: Colors.black,
-                            //                     width: 0.8),
-                            //                 color: Colors.white,
-                            //                 borderRadius:
-                            //                     BorderRadius.circular(100),
-                            //               ),
-                            //               width: 50,
-                            //               height: 50,
-                            //             ),
-                            //           ),
-                            //           Positioned(
-                            //             left: 30,
-                            //             child: Container(
-                            //               decoration: BoxDecoration(
-                            //                 border: Border.all(
-                            //                     color: Colors.black,
-                            //                     width: 0.8),
-                            //                 color: Colors.white,
-                            //                 borderRadius:
-                            //                     BorderRadius.circular(100),
-                            //               ),
-                            //               width: 50,
-                            //               height: 50,
-                            //             ),
-                            //           ),
-                            //           Positioned(
-                            //             left: 60,
-                            //             child: Container(
-                            //               decoration: BoxDecoration(
-                            //                 border: Border.all(
-                            //                     color: Colors.black,
-                            //                     width: 0.8),
-                            //                 color: Colors.white,
-                            //                 borderRadius:
-                            //                     BorderRadius.circular(100),
-                            //               ),
-                            //               width: 50,
-                            //               height: 50,
-                            //             ),
-                            //           ),
-                            //         ],
-                            //       ),
-                            //     ),
-                            //     title: const Text("12 aceitos"),
-                            //   ),
-                            //   ListTile(
-                            //     leading: SizedBox(
-                            //       width: 150,
-                            //       height:
-                            //           50, // Adjust height to match the Stack height
-                            //       child: Stack(
-                            //         children: [
-                            //           Positioned(
-                            //             left: 0,
-                            //             child: Container(
-                            //               decoration: BoxDecoration(
-                            //                 border: Border.all(
-                            //                     color: Colors.black,
-                            //                     width: 0.8),
-                            //                 color: Colors.white,
-                            //                 borderRadius:
-                            //                     BorderRadius.circular(100),
-                            //               ),
-                            //               width: 50,
-                            //               height: 50,
-                            //             ),
-                            //           ),
-                            //           Positioned(
-                            //             left: 30,
-                            //             child: Container(
-                            //               decoration: BoxDecoration(
-                            //                 border: Border.all(
-                            //                     color: Colors.black,
-                            //                     width: 0.8),
-                            //                 color: Colors.white,
-                            //                 borderRadius:
-                            //                     BorderRadius.circular(100),
-                            //               ),
-                            //               width: 50,
-                            //               height: 50,
-                            //             ),
-                            //           ),
-                            //           Positioned(
-                            //             left: 60,
-                            //             child: Container(
-                            //               decoration: BoxDecoration(
-                            //                 border: Border.all(
-                            //                     color: Colors.black,
-                            //                     width: 0.8),
-                            //                 color: Colors.white,
-                            //                 borderRadius:
-                            //                     BorderRadius.circular(100),
-                            //               ),
-                            //               width: 50,
-                            //               height: 50,
-                            //             ),
-                            //           ),
-                            //         ],
-                            //       ),
-                            //     ),
-                            //     title: const Text("2 na fila"),
-                            //   ),
-                          ),
+                            ],
+                          )),
                         ],
                       ),
                     ),
