@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:projeto/Pages/ChatPage/ChatPage.dart';
-import 'package:projeto/Pages/MainEventoPage/MainEventoPage.dart';
-import 'package:projeto/Pages/MainTImesPage/MainTImesPage.dart';
-import 'package:projeto/Pages/MorePage/MorePage.dart';
 import 'package:projeto/utils/ColorsPaleta.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:projeto/Pages/MorePage/MorePage.dart';
+import 'package:projeto/Pages/ChatPage/ChatPage.dart';
+// import 'package:dot_navigation_bar/dot_navigation_bar.dart';
+import 'package:projeto/Pages/MainTImesPage/MainTImesPage.dart';
+import 'package:projeto/Pages/MainEventoPage/MainEventoPage.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -25,37 +26,24 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
-      bottomNavigationBar: Container(
-        decoration: const BoxDecoration(
-            border: Border(top: BorderSide(width: 2.0, color: Colors.black))),
-        child: GNav(
-          color: Colors.black,
-          iconSize: 28,
-          activeColor: ColorsPaleta().red,
-          textSize: 40.0,
-          duration: const Duration(milliseconds: 800),
-          tabs: const [
-            GButton(
-              icon: Icons.calendar_today_rounded,
-              text: "Eventos",
-            ),
-            GButton(
-              icon: Icons.people_alt_outlined,
-              text: "Times",
-            ),
-            GButton(
-              icon: Icons.chat_bubble_outline_rounded,
-              text: "Chat",
-            ),
-            GButton(
-              icon: Icons.menu_sharp,
-              text: "More",
-            ),
-          ],
-          onTabChange: onTap,
-          selectedIndex: indexCurrent,
-        ),
+      bottomNavigationBar: SizedBox(
+        height: 30,
+        // child: GNav(
+        //   color: Colors.black,
+        //   iconSize: 28,
+        //   activeColor: ColorsPaleta().red,
+        //   textSize: 40.0,
+        //   duration: const Duration(milliseconds: 800),
+        //   tabs: [
+        //     _buildGButton(Icons.calendar_today_rounded, 0),
+        //     _buildGButton(Icons.people_alt_outlined, 1),
+        //     _buildGButton(Icons.chat_bubble_outline_rounded, 2),
+        //     _buildGButton(Icons.menu_sharp, 3),
+        //   ],
+        //   onTabChange: onTap,
+        //   selectedIndex: indexCurrent,
+        // ),
+        child: DotNavigationBar(),
       ),
       body: Center(
         child: _widgetOptions.elementAt(indexCurrent),
@@ -69,4 +57,30 @@ class _BottomNavBarState extends State<BottomNavBar> {
     const ChatPage(),
     const MorePage()
   ];
+
+  GButton _buildGButton(IconData icon, int index) {
+    return GButton(
+      gap: 5,
+      icon: icon,
+      leading: Stack(
+        alignment: Alignment.center,
+        children: [
+          Positioned(
+            bottom: -2,
+            child: Visibility(
+              visible: indexCurrent == index,
+              child: Container(
+                width: 8,
+                height: 8,
+                decoration: BoxDecoration(
+                  color: ColorsPaleta().mainTextColor,
+                  shape: BoxShape.circle,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
 }

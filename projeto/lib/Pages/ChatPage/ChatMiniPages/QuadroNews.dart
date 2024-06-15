@@ -46,7 +46,7 @@ class _QuadroNewsState extends State<QuadroNews> {
           padding: const EdgeInsets.only(top:40.0),
           child: Container(
             decoration: BoxDecoration(
-                color: ColorsPaleta().BackGroundGray,
+                color: ColorsPaleta().backGroundGray,
                 boxShadow: [
                   BoxShadow(
                       spreadRadius: 0.3,

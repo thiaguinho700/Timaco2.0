@@ -165,7 +165,7 @@ class _CreateNewTimeState extends State<CreateNewTime> {
                 height: 15,
                 decoration: BoxDecoration(
                     borderRadius: BorderRadiusDirectional.circular(100),
-                    color: ColorsPaleta().BackGroundGray),
+                    color: ColorsPaleta().backGroundGray),
               ),
             )
           ],

@@ -56,9 +56,17 @@ class _MainEventoPageState extends State<MainEventoPage> {
                       style: TextStyle(
                           fontSize: 25.0, fontWeight: FontWeight.w400),
                     ),
-                    containerDataEvento(context, Colors.black),
-                    containerDataEvento(context, ColorsPaleta().yellow),
-                    containerDataEvento(context, ColorsPaleta().red)
+                    containerDataEvento(
+                      context,
+                      ColorsPaleta().mainTextColor,
+                      ColorsPaleta().textMainColorWhite,
+                      
+                      
+                    ),
+                    containerDataEvento(
+                        context, ColorsPaleta().yellow, ColorsPaleta().mainTextColor),
+                    containerDataEvento(
+                        context, ColorsPaleta().red, ColorsPaleta().textMainColorWhite)
                   ],
                 ),
               ))
@@ -87,7 +95,8 @@ class _MainEventoPageState extends State<MainEventoPage> {
     // }
   }
 
-  Widget containerDataEvento(BuildContext context, Color ColorContainer) =>
+  Widget containerDataEvento(
+          BuildContext context, Color ColorContainer, Color ColorText) =>
       Padding(
         padding: const EdgeInsets.only(bottom: 20),
         child: GestureDetector(
@@ -101,6 +110,7 @@ class _MainEventoPageState extends State<MainEventoPage> {
             decoration: BoxDecoration(
               border: Border.all(width: 2.5, color: ColorContainer),
               borderRadius: BorderRadiusDirectional.circular(10),
+              color: ColorContainer
               // boxShadow: [
               //   BoxShadow(
               //       spreadRadius: 0.1,
@@ -112,48 +122,63 @@ class _MainEventoPageState extends State<MainEventoPage> {
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                const SizedBox(
+                SizedBox(
                   width: 60,
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text("19",
                           style: TextStyle(
-                              fontSize: 25, fontWeight: FontWeight.w500)),
+                              color: ColorText,
+                              fontSize: 25,
+                              fontWeight: FontWeight.w500)),
                       Text("Ter",
                           style: TextStyle(
-                              fontSize: 25, fontWeight: FontWeight.w500))
+                              color: ColorText,
+                              fontSize: 25,
+                              fontWeight: FontWeight.w500))
                     ],
                   ),
                 ),
                 Container(
                   width: 2,
-                  height: 120,
-                  decoration: BoxDecoration(color: ColorContainer),
+                  height: 110,
+                  decoration: BoxDecoration(color: ColorsPaleta().textMainColorWhite),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 8.0),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      const Column(
+                      Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Text(
                             "Pelada",
                             style: TextStyle(
-                                fontSize: 23, fontWeight: FontWeight.w600),
+                                color: ColorText,
+                                fontSize: 23,
+                                fontWeight: FontWeight.w600),
                           ),
                           Text(
                             "Nome do time",
                             style: TextStyle(
-                                fontSize: 20, fontWeight: FontWeight.w400),
+                                color: ColorText,
+                                fontSize: 20,
+                                fontWeight: FontWeight.w400),
                           ),
                           Row(
                             children: [
-                              Icon(Icons.people_alt_outlined),
-                              Text("11/12", style: TextStyle(fontSize: 16))
+                              Icon(
+                                Icons.people_alt_outlined,
+                                color: ColorText,
+                              ),
+                              Text("11/12",
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                    color: ColorText,
+                                  ))
                             ],
                           ),
                         ],
@@ -161,15 +186,18 @@ class _MainEventoPageState extends State<MainEventoPage> {
                       SizedBox(
                         width: (MediaQuery.of(context).size.width / 4.6),
                       ),
-                      const Column(
+                      Column(
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Text("Na fila",
                               style: TextStyle(
-                                  fontSize: 21, fontWeight: FontWeight.w600)),
+                                  color: ColorText,
+                                  fontSize: 21,
+                                  fontWeight: FontWeight.w600)),
                           Icon(
                             Icons.arrow_downward,
                             weight: 40,
+                            color: ColorText,
                           )
                         ],
                       )

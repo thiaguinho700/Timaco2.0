@@ -14,11 +14,12 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   network_image: ^0.1.1
-  flutter_svg: ^2.0.9
+  flutter_svg: 1.1.6
   flutter_statusbarcolor_ns: ^0.5.0
   google_nav_bar: ^5.0.6
   get: ^4.6.6
-
+  icon_forest: ^1.1.8 
+  dot_navigation_bar: ^1.0.2
 
 dev_dependencies:
   flutter_test:

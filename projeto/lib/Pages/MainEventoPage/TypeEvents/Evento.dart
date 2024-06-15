@@ -24,7 +24,7 @@ class _EventoState extends State<Evento> {
               width: 350,
               height: 320,
               decoration: BoxDecoration(
-                  color: ColorsPaleta().BackGroundGray,
+                  color: ColorsPaleta().backGroundGray,
                   boxShadow: [
                     BoxShadow(
                         spreadRadius: 0.3,

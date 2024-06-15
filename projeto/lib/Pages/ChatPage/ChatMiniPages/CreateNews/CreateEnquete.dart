@@ -35,7 +35,7 @@ class _CreateEnqueteState extends State<CreateEnquete> {
             width: 360,
             height: 400,
             decoration: BoxDecoration(
-                color: ColorsPaleta().BackGroundGray,
+                color: ColorsPaleta().backGroundGray,
                 boxShadow: [
                   BoxShadow(
                       color: Colors.grey.shade600,

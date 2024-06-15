@@ -39,45 +39,50 @@ class _ViewEventoState extends State<ViewEvento> {
                     style: TextStyle(
                         fontSize: 23.0, color: ColorsPaleta().mainTextColor),
                   ),
-                  Container(
-                    decoration: BoxDecoration(
-                      boxShadow: [
-                        BoxShadow(
-                            color: Colors.grey.shade600,
-                            spreadRadius: 0.1,
-                            blurRadius: 0.1,
-                            offset: const Offset(0, 1))
-                      ],
-                      color: ColorsPaleta().BackGroundGray,
-                    ),
-                    width: MediaQuery.of(context).size.width,
-                    height: 80,
-                    child: Row(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: const EdgeInsetsDirectional.only(end: 70.0, start: 20.0),
-                          child: Container(
-                            width: 50,
-                            height: 50,
-                            decoration: BoxDecoration(
-                                border:
-                                    Border.all(width: 2, color: Colors.white),
-                                borderRadius: const BorderRadius.all(
-                                    Radius.circular(50))),
-                            child: const Icon(Icons.mode_edit_outline_outlined,
-                                size: 40.0),
+                  Padding(
+                    padding: const EdgeInsetsDirectional.only(bottom: 20.0),
+                    child: Container(
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.grey.shade600,
+                              spreadRadius: 0.1,
+                              blurRadius: 0.1,
+                              offset: const Offset(0, 1))
+                        ],
+                        color: ColorsPaleta().backGroundGray,
+                      ),
+                      width: MediaQuery.of(context).size.width,
+                      height: 80,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: const EdgeInsetsDirectional.only(
+                                end: 110.0, start: 20.0),
+                            child: Container(
+                              width: 50,
+                              height: 50,
+                              decoration: BoxDecoration(
+                                  border:
+                                      Border.all(width: 2, color: Colors.white),
+                                  borderRadius: const BorderRadius.all(
+                                      Radius.circular(50))),
+                              child: const Icon(
+                                  Icons.mode_edit_outline_outlined,
+                                  size: 40.0),
+                            ),
                           ),
-                        ),
-                        const Text(
-                          "Na fila",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20.0,
-                              fontWeight: FontWeight.w500),
-                        )
-                      ],
+                           Text(
+                            "Na fila",
+                            style: TextStyle(
+                                color: ColorsPaleta().mainTextViewEventoFila,
+                                fontSize: 20.0,
+                                fontWeight: FontWeight.w500),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                   Container(
@@ -89,7 +94,7 @@ class _ViewEventoState extends State<ViewEvento> {
                               blurRadius: 0.1,
                               offset: const Offset(0, 1))
                         ],
-                        color: ColorsPaleta().BackGroundGray,
+                        color: ColorsPaleta().backGroundGray,
                         borderRadius: const BorderRadiusDirectional.all(
                             Radius.circular(30))),
                     width: MediaQuery.of(context).size.width - 50,
@@ -145,7 +150,7 @@ class _ViewEventoState extends State<ViewEvento> {
                                   blurRadius: 0.1,
                                   offset: const Offset(0, 1))
                             ],
-                            color: ColorsPaleta().BackGroundGray,
+                            color: ColorsPaleta().backGroundGray,
                             borderRadius: const BorderRadiusDirectional.all(
                                 Radius.circular(30))),
                         child: Column(
@@ -240,13 +245,14 @@ class _ViewEventoState extends State<ViewEvento> {
                                 blurRadius: 0.1,
                                 offset: const Offset(0, 1))
                           ],
-                          color: ColorsPaleta().BackGroundGray,
+                          color: ColorsPaleta().backGroundGray,
                           borderRadius: const BorderRadiusDirectional.all(
                               Radius.circular(30))),
                       width: MediaQuery.of(context).size.width - 50,
                       height: 300,
                       child: Padding(
                         padding: const EdgeInsetsDirectional.all(10),
+
                         child: Column(
                           children: [
                             Row(

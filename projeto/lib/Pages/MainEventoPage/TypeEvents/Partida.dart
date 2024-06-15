@@ -28,7 +28,7 @@ class _PartidaState extends State<Partida> {
               width: 350,
               height: heightContainer ? 550 : 370,
               decoration: BoxDecoration(
-                  color: ColorsPaleta().BackGroundGray,
+                  color: ColorsPaleta().backGroundGray,
                   boxShadow: [
                     BoxShadow(
                         spreadRadius: 0.3,

@@ -22,7 +22,7 @@ class _CreateNewsState extends State<CreateNews> {
             width: 360,
             height: 460,
             decoration: BoxDecoration(
-                color: ColorsPaleta().BackGroundGray,
+                color: ColorsPaleta().backGroundGray,
                 boxShadow: [
                   BoxShadow(
                       color: Colors.grey.shade600,
