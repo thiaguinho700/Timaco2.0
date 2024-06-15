@@ -29,7 +29,6 @@ class _ViewEventoState extends State<ViewEvento> {
             )),
       ),
       body: SingleChildScrollView(
-        
         child: Center(
           child: Column(
             children: [
@@ -42,53 +41,42 @@ class _ViewEventoState extends State<ViewEvento> {
                   ),
                   Container(
                     decoration: BoxDecoration(
-                        boxShadow: [
-                          BoxShadow(
-                              color: Colors.grey.shade600,
-                              spreadRadius: 0.1,
-                              blurRadius: 0.1,
-                              offset: const Offset(0, 1))
-                        ],
-                        color: ColorsPaleta().BackGroundGray,
-                        borderRadius: const BorderRadiusDirectional.all(
-                            Radius.circular(30))),
-                    width: MediaQuery.of(context).size.width - 50,
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.grey.shade600,
+                            spreadRadius: 0.1,
+                            blurRadius: 0.1,
+                            offset: const Offset(0, 1))
+                      ],
+                      color: ColorsPaleta().BackGroundGray,
+                    ),
+                    width: MediaQuery.of(context).size.width,
                     height: 80,
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            Padding(
-                              padding:
-                                  const EdgeInsetsDirectional.only(start: 20),
-                              child: Text(
-                                "Data",
-                                style: TextStyle(
-                                    fontSize: 23,
-                                    color: ColorsPaleta().lineGreyColor,
-                                    fontWeight: FontWeight.w600),
-                              ),
-                            ),
-                            const Text(
-                              "19/01/2024",
-                              style: TextStyle(
-                                  fontSize: 20, fontWeight: FontWeight.w500),
-                            )
-                          ],
-                        ),
-                        Container(
-                          width: 0.9,
-                          height: 80,
-                          decoration: const BoxDecoration(color: Colors.black),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.only(end: 70.0, start: 20.0),
+                          child: Container(
+                            width: 50,
+                            height: 50,
+                            decoration: BoxDecoration(
+                                border:
+                                    Border.all(width: 2, color: Colors.white),
+                                borderRadius: const BorderRadius.all(
+                                    Radius.circular(50))),
+                            child: const Icon(Icons.mode_edit_outline_outlined,
+                                size: 40.0),
+                          ),
                         ),
                         const Text(
-                          "17:20",
+                          "Na fila",
                           style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.w600),
-                        ),
+                              color: Colors.white,
+                              fontSize: 20.0,
+                              fontWeight: FontWeight.w500),
+                        )
                       ],
                     ),
                   ),
