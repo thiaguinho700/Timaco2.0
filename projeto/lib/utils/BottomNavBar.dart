@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:projeto/utils/ColorsPaleta.dart';
-import 'package:google_nav_bar/google_nav_bar.dart';
+import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:projeto/Pages/MorePage/MorePage.dart';
 import 'package:projeto/Pages/ChatPage/ChatPage.dart';
-// import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:projeto/Pages/MainTImesPage/MainTImesPage.dart';
 import 'package:projeto/Pages/MainEventoPage/MainEventoPage.dart';
 
@@ -26,28 +25,45 @@ class _BottomNavBarState extends State<BottomNavBar> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: SizedBox(
-        height: 30,
-        // child: GNav(
-        //   color: Colors.black,
-        //   iconSize: 28,
-        //   activeColor: ColorsPaleta().red,
-        //   textSize: 40.0,
-        //   duration: const Duration(milliseconds: 800),
-        //   tabs: [
-        //     _buildGButton(Icons.calendar_today_rounded, 0),
-        //     _buildGButton(Icons.people_alt_outlined, 1),
-        //     _buildGButton(Icons.chat_bubble_outline_rounded, 2),
-        //     _buildGButton(Icons.menu_sharp, 3),
-        //   ],
-        //   onTabChange: onTap,
-        //   selectedIndex: indexCurrent,
-        // ),
-        child: DotNavigationBar(),
+    
+      bottomNavigationBar:  Padding(
+        padding:EdgeInsets.only(bottom: 10.0),
+        child: DotNavigationBar(
+          
+          
+            // margin: const EdgeInsets.symmetric(horizontal: 20),
+            duration: const Duration(milliseconds: 800),
+            backgroundColor: Colors.black,
+            margin: EdgeInsets.only(left: 20.0,right: 20.0),
+            items: [
+              DotNavigationBarItem(
+                icon: const Icon(Icons.calendar_today_rounded),
+                selectedColor: ColorsPaleta().red,
+                unselectedColor: Colors.black,
+              ),
+              DotNavigationBarItem(
+                icon: const Icon(Icons.people_alt_outlined),
+                selectedColor: ColorsPaleta().red,
+                unselectedColor: Colors.black,
+              ),
+              DotNavigationBarItem(
+                icon: const Icon(Icons.chat_bubble_outline_rounded),
+                selectedColor: ColorsPaleta().red,
+                unselectedColor: Colors.black,
+              ),
+              DotNavigationBarItem(
+                icon: const Icon(Icons.menu_sharp),
+                selectedColor: ColorsPaleta().red,
+                unselectedColor: Colors.black,
+              ),
+            ],
+            onTap: onTap,
+            currentIndex: indexCurrent,
+            // splashBorderRadius: 50,
+          ),
       ),
-      body: Center(
-        child: _widgetOptions.elementAt(indexCurrent),
-      ),
+      
+      // body: _widgetOptions.elementAt(indexCurrent),
     );
   }
 
@@ -57,30 +73,4 @@ class _BottomNavBarState extends State<BottomNavBar> {
     const ChatPage(),
     const MorePage()
   ];
-
-  GButton _buildGButton(IconData icon, int index) {
-    return GButton(
-      gap: 5,
-      icon: icon,
-      leading: Stack(
-        alignment: Alignment.center,
-        children: [
-          Positioned(
-            bottom: -2,
-            child: Visibility(
-              visible: indexCurrent == index,
-              child: Container(
-                width: 8,
-                height: 8,
-                decoration: BoxDecoration(
-                  color: ColorsPaleta().mainTextColor,
-                  shape: BoxShape.circle,
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
 }
