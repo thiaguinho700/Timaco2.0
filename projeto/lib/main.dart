@@ -2,15 +2,17 @@ import 'package:projeto/Pages/ChatPage/MainChatPage.dart';
 import 'package:projeto/Pages/LoadingPage/LoadingPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+// import 'package:codigo/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:projeto/Pages/LoginPage/LoginPage.dart';
-import 'package:projeto/Pages/MainTImesPage/CreateNewTime.dart';
-import 'package:projeto/Pages/MainTImesPage/MainTImesPage.dart';
-import 'package:projeto/Pages/SignInPage/SignInPage.dart';
-import 'package:projeto/Pages/MainEventoPage/MainEventoPage.dart';
 import 'package:projeto/utils/BottomNavBar.dart';
+import 'package:projeto/firebase_options.dart';
 
-void  main() {
-   SystemChrome.setEnabledSystemUIMode(SystemUiMode.manual, overlays: []);
+void main() async {
+ WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 

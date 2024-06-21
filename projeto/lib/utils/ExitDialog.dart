@@ -1,7 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:projeto/Pages/LoginPage/LoginPage.dart';
 import 'package:projeto/utils/ColorsPaleta.dart';
+import 'package:projeto/Pages/LoginPage/LoginPage.dart';
+import 'package:projeto/functionsFlutter/Login_SignIn.dart' show signOutUser;
 
 class ExitDialog extends StatefulWidget {
   const ExitDialog({super.key});
@@ -47,10 +48,11 @@ class _ExitDialogState extends State<ExitDialog> {
                         )),
                     GestureDetector(
                         onTap: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => const LoginPage()));
+                          // Navigator.push(
+                          //     context,
+                          //     MaterialPageRoute(
+                          //         builder: (context) => const LoginPage()));
+                          signOutUser(LoginPage(), context);
                         },
                         child: const Text("Sair",
                             style: TextStyle(fontSize: 19.0)))

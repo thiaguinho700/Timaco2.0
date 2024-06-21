@@ -110,14 +110,14 @@ class _MainEventoPageState extends State<MainEventoPage> {
             decoration: BoxDecoration(
               border: Border.all(width: 2.5, color: ColorContainer),
               borderRadius: BorderRadiusDirectional.circular(10),
-              color: ColorContainer
-              // boxShadow: [
-              //   BoxShadow(
-              //       spreadRadius: 0.1,
-              //       blurRadius: 0.1,
-              //       color: ColorsPaleta().lineGreyColor,
-              //       offset: const Offset(0, 2)),
-              // ],
+              color: ColorContainer,
+              boxShadow: [
+                BoxShadow(
+                    spreadRadius: 0.3,
+                    blurRadius: 0.1,
+                    color: ColorsPaleta().lineGreyColor,
+                    offset: const Offset(0, 3)),
+              ],
             ),
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -155,7 +155,7 @@ class _MainEventoPageState extends State<MainEventoPage> {
                         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                         children: [
                           Text(
-                            "Pelada",
+                            "Futebol",
                             style: TextStyle(
                                 color: ColorText,
                                 fontSize: 23,

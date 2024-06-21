@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:projeto/Pages/MainTImesPage/CreateNewTime.dart';
-import 'package:projeto/utils/BottomNavBar.dart';
 import 'package:projeto/utils/ColorsPaleta.dart';
 import 'package:projeto/utils/OptionsEvents.dart';
 
@@ -67,13 +65,16 @@ class _MainTimePageState extends State<MainTimePage> {
             Padding(
               padding: const EdgeInsets.only(top: 85.0),
               child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        elevation: 6,
-                        shadowColor: Colors.black,
-                        fixedSize: const Size(338, 45),
-                        backgroundColor: ColorsPaleta().orange),
+                  style: ElevatedButton.styleFrom(
+                      elevation: 6,
+                      shadowColor: Colors.black,
+                      fixedSize: const Size(338, 45),
+                      backgroundColor: ColorsPaleta().orange),
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const CreateNewTime()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const CreateNewTime()));
                   },
                   child: const Text(
                     "Novo time",

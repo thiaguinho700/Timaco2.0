@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "657745091009",
+    "project_id": "data-timeco-12",
+    "storage_bucket": "data-timeco-12.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:657745091009:android:3a9b1b370a96559daf7740",
+        "android_client_info": {
+          "package_name": "com.timaco.projeto"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD61gDO3mS5HIxu15_k06TJbgTCvD9QkvE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

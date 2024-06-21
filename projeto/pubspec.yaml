@@ -18,8 +18,16 @@ dependencies:
   flutter_statusbarcolor_ns: ^0.5.0
   google_nav_bar: ^5.0.6
   get: ^4.6.6
-  icon_forest: ^1.1.8 
   dot_navigation_bar: ^1.0.2
+  firebase_core: ^2.27.0
+  firebase_auth: ^4.17.8
+  email_validator: ^2.1.17
+  flutter_spinkit: ^5.2.1
+  google_sign_in: ^6.2.1
+  firebase_database: ^10.4.9
+  cloud_firestore: ^4.15.8
+  
+  
 
 dev_dependencies:
   flutter_test:

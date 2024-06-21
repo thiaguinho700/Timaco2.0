@@ -31,10 +31,10 @@ class _ChatTimeState extends State<ChatTime> {
                   color: ColorsPaleta().orange,
                   boxShadow: [
                     BoxShadow(
-                        color: Colors.grey.shade600,
-                        spreadRadius: 2,
-                        blurRadius: 1,
-                        offset: const Offset(0, 3))
+                        spreadRadius: 0.3,
+                        blurRadius: 0.1,
+                        color: ColorsPaleta().lineGreyColor,
+                        offset: const Offset(0, 3)),
                   ]),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
