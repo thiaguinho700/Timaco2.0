@@ -60,13 +60,11 @@ class _MainEventoPageState extends State<MainEventoPage> {
                       context,
                       ColorsPaleta().mainTextColor,
                       ColorsPaleta().textMainColorWhite,
-                      
-                      
                     ),
-                    containerDataEvento(
-                        context, ColorsPaleta().yellow, ColorsPaleta().mainTextColor),
-                    containerDataEvento(
-                        context, ColorsPaleta().red, ColorsPaleta().textMainColorWhite)
+                    containerDataEvento(context, ColorsPaleta().yellow,
+                        ColorsPaleta().mainTextColor),
+                    containerDataEvento(context, ColorsPaleta().red,
+                        ColorsPaleta().textMainColorWhite)
                   ],
                 ),
               ))
@@ -143,7 +141,8 @@ class _MainEventoPageState extends State<MainEventoPage> {
                 Container(
                   width: 2,
                   height: 110,
-                  decoration: BoxDecoration(color: ColorsPaleta().textMainColorWhite),
+                  decoration:
+                      BoxDecoration(color: ColorsPaleta().textMainColorWhite),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 8.0),

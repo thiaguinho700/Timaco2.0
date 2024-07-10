@@ -4,7 +4,7 @@ import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:projeto/Pages/MorePage/MorePage.dart';
 import 'package:projeto/Pages/ChatPage/ChatPage.dart';
 // import 'package:dot_navigation_bar/dot_navigation_bar.dart';
-import 'package:projeto/Pages/MainTImesPage/MainTImesPage.dart';
+import 'package:projeto/Pages/MainTImesPage/MainTimesPage.dart';
 import 'package:projeto/Pages/MainEventoPage/MainEventoPage.dart';
 
 class BottomNavBar extends StatefulWidget {

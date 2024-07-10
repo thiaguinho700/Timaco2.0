@@ -2,6 +2,7 @@ import 'package:projeto/utils/ColorsPaleta.dart';
 import 'package:flutter/material.dart';
 
 handleSnackBar(BuildContext context, String textError) {
+    FocusScope.of(context).requestFocus(FocusNode());
   return ScaffoldMessenger.of(context).showSnackBar(SnackBar(
     width: MediaQuery.of(context).size.width - 5,
     content: Container(

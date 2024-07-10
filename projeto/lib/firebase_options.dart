@@ -53,7 +53,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '657745091009',
     projectId: 'data-timeco-12',
     storageBucket: 'data-timeco-12.appspot.com',
-    iosBundleId: 'com.timaco.projeto',
+    iosBundleId: 'com.exemplo.projeto',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
@@ -62,7 +62,7 @@ class DefaultFirebaseOptions {
     messagingSenderId: '657745091009',
     projectId: 'data-timeco-12',
     storageBucket: 'data-timeco-12.appspot.com',
-    iosBundleId: 'com.timaco.projeto',
+    iosBundleId: 'com.exemplo.projeto',
   );
 
   static const FirebaseOptions windows = FirebaseOptions(

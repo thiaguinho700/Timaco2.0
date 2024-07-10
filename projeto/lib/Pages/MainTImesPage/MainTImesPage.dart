@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projeto/Pages/MainTImesPage/CreateNewTime.dart';
+import 'package:projeto/Pages/MainTimesPage/CreateNewTime.dart';
 import 'package:projeto/utils/ColorsPaleta.dart';
 import 'package:projeto/utils/OptionsEvents.dart';
 

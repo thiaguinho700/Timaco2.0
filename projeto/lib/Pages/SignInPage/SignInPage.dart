@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:projeto/functionsFlutter/Login_SignIn.dart'
+    show signInUserGoogleAccount;
+import 'package:projeto/utils/BottomNavBar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:projeto/utils/ColorsPaleta.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -243,7 +246,8 @@ class _SignInPageState extends State<SignInPage> {
                                     _passwordController.text.trim(),
                                     _nameController.text.trim(),
                                     isEmailValidBool,
-                                    context),
+                                    context,
+                                    const BottomNavBar()),
                                 _toggleAnimation()
                               });
                     } else {
@@ -264,89 +268,16 @@ class _SignInPageState extends State<SignInPage> {
                       borderRadius: BorderRadius.circular(15.0)),
                   backgroundColor: ColorsPaleta().orange),
               child: isFinishLoad
-                  ? Text(
+                  ? SpinKitThreeBounce(
+                      color: ColorsPaleta().textMainColorWhite,
+                      size: 20.0,
+                    )
+                  : Text(
                       'Criar',
                       style: TextStyle(
                           color: ColorsPaleta().textMainColorWhite,
                           fontSize: 21),
-                    )
-                  : SpinKitThreeBounce(
-                      color: ColorsPaleta().textMainColorWhite,
-                      size: 20.0,
                     )),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(height: 4, width: 150, color: ColorsPaleta().yellow),
-              const SizedBox(
-                width: 5,
-              ),
-              Text(
-                "OU",
-                style: TextStyle(color: ColorsPaleta().red, fontSize: 15.0),
-              ),
-              const SizedBox(
-                width: 5,
-              ),
-              Container(height: 4, width: 150, color: ColorsPaleta().red)
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      elevation: 2,
-                      shape: RoundedRectangleBorder(
-                          side: BorderSide(color: ColorsPaleta().orange),
-                          borderRadius: BorderRadius.circular(15.0)),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 30, vertical: 10)),
-                  onPressed: () {},
-                  child: Row(
-                    children: [
-                      SvgPicture.asset(
-                        "lib/Image/googleIcon.svg",
-                        width: 35.0,
-                      ),
-                      const SizedBox(
-                        width: 8.0,
-                      ),
-                      const Text(
-                        "Google",
-                        style: TextStyle(fontSize: 14.0, color: Colors.black),
-                      )
-                    ],
-                  )),
-              const SizedBox(
-                width: 5.0,
-              ),
-              ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                      elevation: 2,
-                      shape: RoundedRectangleBorder(
-                          side: BorderSide(color: ColorsPaleta().orange),
-                          borderRadius: BorderRadius.circular(15.0)),
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 30, vertical: 10)),
-                  onPressed: () {},
-                  child: Row(
-                    children: [
-                      SvgPicture.asset(
-                        "lib/Image/facebookIcon.svg",
-                        width: 35.0,
-                      ),
-                      const SizedBox(
-                        width: 8.0,
-                      ),
-                      const Text(
-                        "Facebook",
-                        style: TextStyle(fontSize: 14.0, color: Colors.black),
-                      )
-                    ],
-                  )),
-            ],
-          ),
         ],
       ),
     );
