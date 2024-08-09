@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:projeto/Pages/LoginPage/LoginPage.dart';
 import 'package:projeto/utils/ScankBarErrorHandler.dart';
 import "package:cloud_firestore/cloud_firestore.dart";
 
@@ -18,6 +19,8 @@ Future createUserWithEmailPass(String emailUser, String passwordUser,
         "EmailUser": emailUser,
       };
       await docRef.add(json);
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => const LoginPage()));
     });
   } on FirebaseAuthException catch (e) {
     switch (e.code) {

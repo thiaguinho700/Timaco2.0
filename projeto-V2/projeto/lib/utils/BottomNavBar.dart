@@ -1,11 +1,23 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:projeto/firebase_options.dart';
 import 'package:projeto/utils/ColorsPaleta.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 import 'package:projeto/Pages/MorePage/MorePage.dart';
 import 'package:projeto/Pages/ChatPage/ChatPage.dart';
 // import 'package:dot_navigation_bar/dot_navigation_bar.dart';
-import 'package:projeto/Pages/MainTImesPage/MainTImesPage.dart';
+import 'package:projeto/Pages/MainTimesPage/MainTImesPage.dart';
 import 'package:projeto/Pages/MainEventoPage/MainEventoPage.dart';
+
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+  runApp(const BottomNavBar());
+}
+
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -15,7 +27,8 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
-  int indexCurrent = 0;
+
+  int indexCurrent = 1;
 
   void onTap(int index) {
     setState(() {

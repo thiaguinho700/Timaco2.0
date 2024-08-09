@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:projeto/Pages/ForgotPassword/ForgotPasswordPage.dart';
 import 'package:projeto/utils/BottomNavBar.dart';
 import 'package:projeto/utils/ColorsPaleta.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -154,12 +155,19 @@ class _LoginPageState extends State<LoginPage> {
                       margin: const EdgeInsets.only(top: 20.0),
                       alignment: Alignment.centerRight,
                       child: GestureDetector(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      const ForgotPasswordPage()));
+                        },
                         child: Text(
                           "Esqueceu a senha?",
                           style: TextStyle(
                               fontSize: 20.0,
-                              color: ColorsPaleta().mainTextColor),
+                              color: ColorsPaleta().mainTextColor,
+                              decoration: TextDecoration.underline),
                         ),
                       )),
                   const SizedBox(
@@ -187,7 +195,6 @@ class _LoginPageState extends State<LoginPage> {
                               Size(MediaQuery.of(context).size.width - 60, 20),
                           shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(15.0)),
-                          
                           backgroundColor: ColorsPaleta().orange),
                       child: AnimatedSwitcher(
                         duration: const Duration(milliseconds: 1200),
@@ -197,10 +204,10 @@ class _LoginPageState extends State<LoginPage> {
                               scale: animation, child: child);
                         },
                         child: isFinishLoad
-                              ? SpinKitThreeBounce(
-                                  color: ColorsPaleta().textMainColorWhite,
-                                  size: 20.0,
-                                )
+                            ? SpinKitThreeBounce(
+                                color: ColorsPaleta().textMainColorWhite,
+                                size: 20.0,
+                              )
                             : Text(
                                 'Login',
                                 style: TextStyle(

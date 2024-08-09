@@ -35,9 +35,12 @@ class _SignInPageState extends State<SignInPage> {
 
   @override
   void dispose() {
+    _nameController.dispose();
     _emailController.dispose();
     _passwordController.dispose();
+    _confirmPasswordController.dispose();
     super.dispose();
+    // Lipa os elementos quando a página é carrega
   }
 
   void validationEmail(String emailString) {
@@ -61,9 +64,9 @@ class _SignInPageState extends State<SignInPage> {
     }
   }
 
-  void _toggleAnimation() {
+  void _toggleAnimation(bool stateAnimation) {
     setState(() {
-      isFinishLoad = !isFinishLoad;
+      isFinishLoad = stateAnimation;
     });
   }
 
@@ -234,7 +237,7 @@ class _SignInPageState extends State<SignInPage> {
                   if (_passwordController.text.trim() ==
                       _confirmPasswordController.text.trim()) {
                     if (checkBox) {
-                      _toggleAnimation();
+                      _toggleAnimation(true);
                       Future.delayed(
                           const Duration(seconds: 3),
                           () => {
@@ -244,8 +247,9 @@ class _SignInPageState extends State<SignInPage> {
                                     _nameController.text.trim(),
                                     isEmailValidBool,
                                     context),
-                                _toggleAnimation()
+                                    _toggleAnimation(false)
                               });
+                      
                     } else {
                       handleSnackBar(context,
                           "Aceite os termos de uso e privacidade!!\nPor favor, tente novamente.");
@@ -264,15 +268,15 @@ class _SignInPageState extends State<SignInPage> {
                       borderRadius: BorderRadius.circular(15.0)),
                   backgroundColor: ColorsPaleta().orange),
               child: isFinishLoad
-                  ? Text(
+                  ? SpinKitThreeBounce(
+                      color: ColorsPaleta().textMainColorWhite,
+                      size: 20.0,
+                    )
+                  : Text(
                       'Criar',
                       style: TextStyle(
                           color: ColorsPaleta().textMainColorWhite,
                           fontSize: 21),
-                    )
-                  : SpinKitThreeBounce(
-                      color: ColorsPaleta().textMainColorWhite,
-                      size: 20.0,
                     )),
           Row(
             mainAxisAlignment: MainAxisAlignment.center,

@@ -1,16 +1,13 @@
-import 'package:projeto/Pages/ChatPage/MainChatPage.dart';
-import 'package:projeto/Pages/LoadingPage/LoadingPage.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-// import 'package:codigo/firebase_options.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:projeto/Pages/LoginPage/LoginPage.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:projeto/utils/BottomNavBar.dart';
 import 'package:projeto/firebase_options.dart';
+import 'package:flutter/material.dart';
 
 void main() async {
- WidgetsFlutterBinding.ensureInitialized();
-  Firebase.initializeApp(
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
   runApp(const MyApp());
@@ -18,12 +15,31 @@ void main() async {
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
+  
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: LoginPage(),
+      home: AuthCheck(),
+    );
+  }
+}
+
+class AuthCheck extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return StreamBuilder<User?>(
+      stream: FirebaseAuth.instance.authStateChanges(),
+      builder: (context, snapshot) {
+        return BottomNavBar();
+        // if (snapshot.connectionState == ConnectionState.waiting) {
+        //   return const CircularProgressIndicator();
+        // } else if (snapshot.hasData) {
+        //   return const BottomNavBar();
+        // } else {
+        //   return const LoginPage();
+        // }
+      },
     );
   }
 }
